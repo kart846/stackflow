@@ -1,0 +1,75 @@
+*{
+    margin: 0px;
+    padding:0px;
+    box-sizing: border-box;
+    font-family: sans-serif;
+   
+}
+body{
+    background-color:white;
+}
+/* stackoverflow header */
+header {
+    display:flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    padding: 15px 4%;
+    background-color:white;
+    color:#7C6B74;
+    border-style:solid;
+    border-color: #e3cfda;
+   
+}
+/* stackoverflow icon and text */
+.icon,h1,span{
+    cursor: pointer;
+    display: inline-block;
+}
+/* heading link */
+a{
+    text-decoration: none;
+    color:#7C6B74;
+}
+/* Stack Overflow Icon */
+.icon .fa-stack-overflow{
+    color: orange;
+    border-radius: 10px; 
+}
+/* head link */
+.nav li{
+    display: inline-block;
+    padding: 0px 5px;
+    font-weight: bold;
+    font-size: 14px;
+}
+.nav li a:hover {
+    color:green;
+}
+ img{
+    width: 100%;
+    height: 700px;
+   margin-top: 5px;
+}
+
+.nav input[type=text]{
+    padding: 6px;
+    margin-top:8px;
+    font-size: 17px;
+    width: 500px;
+    /* border: none; */
+}
+button{
+    font-size: 17px;
+    padding: 6px 10px;
+    margin-top: 0px;
+    margin-right: 0px;
+    background: #ddd;
+    border: none;
+    cursor:pointer;
+}
+
+.nav input[type=text],button{
+    text-align: left;
+    margin: 0;
+    
+}

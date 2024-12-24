@@ -1,0 +1,63 @@
+body {
+    background-color:white;
+    /* background: linear-gradient(230deg, orange 0%, yellow 100%); */
+
+}
+.update_container{
+    
+    display:flex;
+    justify-content: center;
+    background-color: rgb(221, 196, 149);
+    width:600px ;
+    margin-left: 500px;
+    margin-top: 50px;
+    padding: 20px 0px 10px 0px;
+    border-radius: 10px;
+}
+.update_btn{
+    margin-top: 50px;
+    border-radius: 10px;
+}
+.update_btn .update_submit{
+    border-radius: 5px;
+    padding: 10px;
+}
+.update_btn .update_back{
+    border-radius: 5px;
+}
+.update_btn .update_back:hover{
+    background-color: red;
+}
+.update_btn .update_submit:hover{
+    background-color: green;
+}
+/* .update_main{
+    justify-content: center;
+} */
+
+.mb-3{
+    margin-bottom: 10px;
+}
+
+/* .asteriskField{
+    font-size: 32px;
+}     */
+
+.mb-3 label{
+    font-size: 20px;
+    display: block;
+}
+
+.update_container input{
+    width: 300px;
+    padding: 10px 0px 10px 5px;
+    border-radius: 5px;
+    font-size: 18px;
+    border-color: rosybrown;
+}
+
+.update_container .invalid-feedback{
+    color: rgb(164, 68, 68);
+}
+
+

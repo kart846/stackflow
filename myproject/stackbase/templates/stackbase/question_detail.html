@@ -1,0 +1,89 @@
+{% extends 'main.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<style>
+    .container_de{
+        margin-top: 100px;
+    }
+    /* #fh1{
+        margin-top: 20px;
+    } */
+     #sub-nav{
+        display: flex;
+
+     }
+     #fh3{
+        
+        font-size: 30px;
+        padding-top: 20px;
+        text-align: left;
+
+     }
+    @media screen and (max-width: 600px) {
+        #fh3{
+            font-size: 17px;
+            text-align: left;
+        }
+    }
+    #fh6{
+        text-align: left;
+        font-size: 15px;
+        padding-bottom: 20px;
+        font-weight: normal;
+        
+    }
+    @media screen and (max-width: 600px) {
+            #fh6{
+                font-size: 15px;
+                text-align: left;
+                font-weight: normal;
+            }
+        }
+
+
+
+</style>
+<body>
+    <div class="container_de">
+
+        <div class="list-question">
+            <div class="questions">
+                <div class="container" style="background-color: rgba(255, 235, 209, 0.808); padding: 5px; box-shadow: rgb(0, 0, 0, 0.15) 0px 5px 5px 0px; border-radius: 20px;">
+
+                    <h3 id="fh3">{{question.title}}</h3>
+                    <hr>
+                    <h6 id="fh6">{{question.content}}</h6>
+                    <hr>
+                    <h6 id="fh6" style="font-size: 10px; font-style: italic; color: rgb(155, 155, 155); text-align: right; ">Asked By: <a href="% url 'profile' %">{{ object.user|title }}</a>&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp; On: {{ object.date_created|date:"j F, Y"}}</h6>
+                    <br>
+                    <h2>Answer...</h2><br><br><br>
+                    {% if not question.comment.all %}
+                            <h3>No Answer yet... <a href="">Answer Question</a> </h3>
+                    {% else %}
+                          {% for comment in question.comment.all %}
+                            <h3 style="font-weight: normal; font-size: 15px;">{{comment.content|safe}}</h3>
+                            <h3 style="font-size: 10px;">Answer by: <i><a href="">{{comment.name}}</a>- on: {{comment.date_created|date:"j F, Y"}}</i></h3>
+                            <hr>
+                          {% endfor %}
+                        
+                    {% endif %}   
+                    <a class="btn btn-outline-primary" id="fa" href="{% url 'stackbase:question_comment' question.id %}" style="text-decoration: none;">Answer Question</a>
+                    <a style="text-decoration: none;" class="btn btn-outline-success" href="{% url 'stackbase:question_update' question.id %}">&#x270E;</a>
+                    <a style="text-decoration: none;" class="btn btn-outline-danger" href="{% url 'stackbase:question_delete' question.id %}">&#x2716;</a>
+                    <a style="text-decoration: none;" class="btn btn-outline-secondary" href="{% url 'stackbase:question_lists' %}">&#x21a9;</a>
+                    
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+{% endblock %}

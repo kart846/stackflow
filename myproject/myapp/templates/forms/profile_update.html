@@ -1,0 +1,38 @@
+{% extends 'main.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+{% load static %} 
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/profile_update.css' %}">
+   
+
+<body>
+
+<div class="update_container">
+  <div class="update_main ">
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{u_form|crispy}}
+        {{p_form|crispy}}
+        
+      <div class="update_btn">
+        <button class="update_submit" id="logout-btn" type="submit">Update Profile</button>
+       <button class="update_back" id="logout-btn" type="submit">go back</button>
+      </div>
+   </form>
+ </div>
+</div>
+<script>
+feather.replace()
+</script>
+</body>
+</html>
+
+{% endblock content %}

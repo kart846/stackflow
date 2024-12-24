@@ -1,0 +1,28 @@
+{% extends 'main.html' %}
+{% block title %}Home1{% endblock %}
+{% load static %}
+{% block extra_head %}
+   <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+{% endblock %}
+{% block content %}
+<style>
+    .ask{
+        text-align: center;
+        position: relative;
+ }
+ .ask button{
+        /* position: absolute; */
+        /* margin-top: 205px; */
+        padding: 5px;
+        border-radius: 10px;
+ }
+</style>
+<body>
+<div class="ask">
+     
+<div class="image">
+    <img src="{% static 'images/stack1.png' %}"  alt="image" />
+</div>
+</div>
+</body>
+{% endblock %}

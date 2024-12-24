@@ -1,0 +1,85 @@
+{% extends 'main.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup</title>
+
+
+</head>
+<style>
+    
+body{
+    background-color:white; 
+}
+.sign_body{
+    width:600px;
+    margin:50px auto;
+    padding: 30px 20px 30px;
+    background-color: rgb(221, 196, 149);
+    font-size: 20px;
+    border-radius: 15px;
+}
+.sign_body h2 a{
+    color: black;
+}
+.sign_body h2 {
+    text-align: center;
+}
+.sign_body label{
+    display: block;
+}
+
+input{
+    width: 100%;
+    color: rgb(85, 64, 64);
+    font-size: 0.80em;
+    padding: 8px 5px 8px;
+    border: 1px solid #006D77;
+    border-radius: 8px;
+    margin: 5px 0px 15px;
+}
+.helptext{
+    font-size: 0.70em;
+}
+input:focus{
+    background-color: white;
+}
+.btn{
+    text-align: center;
+}
+
+.sign_body button{
+    font-size: 30px;
+    color: black;
+    border-radius: 20px;
+    margin-top: 10px;
+    padding:10px 20px;
+    
+}
+.btn:focus{
+    color:red;
+    background-color: blue;
+}
+</style>
+<body>
+    
+
+    <div class="sign_body">
+
+        <h2 class="active"> <a href="" style="text-decoration: none;">Sign Up</a> </h2>
+        <form action="" method="post">
+            {% csrf_token %}
+            {{form}}
+            <div class="btn">
+            <button>submit</button>
+        </div>
+        </form>
+        </div>
+</body>
+</html>
+
+{% endblock %}
